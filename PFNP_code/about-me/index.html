@@ -47,7 +47,14 @@
     </div>
     <footer>
         <p>&copy; General Assembly 2017</p>
+        <button id="alertButton">Press me!</button> 
     </footer>
   </div>
+  <script type="text/javascript">
+    document.getElementById("alertButton").addEventListener("click", function() {
+      document.querySelector("body").style.color = "red";
+      document.querySelector("h1").innerHTML = "It is done";
+    });
+  </script>
 </body>
 </html>

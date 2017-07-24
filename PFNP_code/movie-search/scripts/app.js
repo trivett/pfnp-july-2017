@@ -32,6 +32,7 @@ function renderMovie(omdbData) {
   $('#year').html(omdbData.Year);
   $('#actors').html(omdbData.Actors);
   $("#plot").html(omdbData.Plot);
+  $('#director').html(omdbData.Director)
   $('#poster').attr("src", omdbData.Poster);
   $('.error').hide();
 

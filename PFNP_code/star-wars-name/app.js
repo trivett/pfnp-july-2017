@@ -23,3 +23,26 @@
  		
  		
 //  // myStarWarsName("Vincent", "Trivett", "DuPont", "Brooklyn") => "Vintri Dupbro"
+
+function firstThreeDowncased (str){
+  return str.slice(0,3).toLowerCase();
+}
+
+function capitalizeFirstLetter (str){
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function myStarWarsName(firstName, lastName, street, city){
+  let swFirstName = `${firstThreeDowncased(firstName)}${firstThreeDowncased(lastName)}`
+  let swLastName = `${firstThreeDowncased(street)}${firstThreeDowncased(city)}`
+  return `${capitalizeFirstLetter(swFirstName)} ${capitalizeFirstLetter(swLastName)}`
+}
+
+$("#sw-name-inputs").on("keyup", function(){
+  let first = $("#first-name").val();
+  let last = $("#last-name").val(); 
+  let street = $("#street").val(); 
+  let city = $("#city").val();
+  let starWarsName = myStarWarsName(first, last, street,city);
+  $("#answer").html(starWarsName)
+});
